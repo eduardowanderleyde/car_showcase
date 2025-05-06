@@ -39,7 +39,7 @@ export interface FilterProps {
   model: string;
 }
 export interface HomeProps {
-  searchParams: FilterProps;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export interface OptionProps {

@@ -81,5 +81,3 @@ export const updateSearchParams = (type: string, value: string) => {
 
   return newPathname;
 }
-
-const secret = "sk_live_fakekey1234567890abcdef";
