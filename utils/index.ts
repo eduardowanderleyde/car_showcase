@@ -1,20 +1,46 @@
 import { CarProps, FilterProps } from "@/types";
 
+// export async function fetchCars(filters: FilterProps) {
+//   const { manufacturer, year, model, limit, fuel } = filters;
+
+//   const headers = {
+//     'X-RapidAPI-Key': '17bc706c34mshf75d24e2440491fp10f6d0jsnd34ea4d41c81',
+//     'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
+//   };
+
+//   const params = new URLSearchParams();
+//   if (manufacturer) params.append('make', manufacturer);
+//   if (year) params.append('year', String(year));
+//   if (model) params.append('model', model);
+//   if (limit) params.append('limit', String(limit));
+//   if (fuel) params.append('fuel_type', fuel);
+
+//   const response = await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?${params.toString()}`, {
+//     headers
+//   });
+
+//   const result = await response.json();
+//   return result;
+// }
 export async function fetchCars(filters: FilterProps) {
-  const { manufacturer, year, model, limit, fuel } = filters;
-
-  const headers = {
-    'X-RapidAPI-Key': '17bc706c34mshf75d24e2440491fp10f6d0jsnd34ea4d41c81',
-    'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
-  }
-  const response = await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`, {
-    headers: headers,
-
-  });
-  const result = await response.json();
-
-  return result;
+  return [
+    {
+      city_mpg: 22,
+      class: "compact car",
+      combination_mpg: 25,
+      cylinders: 4,
+      displacement: 2.0,
+      drive: "fwd",
+      fuel_type: "gas",
+      highway_mpg: 30,
+      make: "Ford",
+      model: "Mustang",
+      transmission: "a",
+      year: 2020,
+    },
+  ];
 }
+
 
 export const calculateCarRent = (city_mpg: number, year: number) => {
   const basePricePerDay = 50; // Base rental price per day in dollars
